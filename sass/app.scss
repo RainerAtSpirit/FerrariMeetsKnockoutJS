@@ -23,8 +23,16 @@ $SegoeUILight: "Segoe UI Light", "Open Sans Condensed", Helvetica, sans-serif;
 }
 
 .badge {
+  bottom: 5px;
   font-weight: bold;
   padding: 0 5px;
+  position: absolute;
+  right: 5px;
+  z-index: 30
+}
+
+.live-tile .tile-title, .list-tile .tile-title {
+  padding: 0 20px 6px 6px;
 }
 
 .live-tile {
