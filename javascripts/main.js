@@ -5,11 +5,14 @@
  */
 
 requirejs.config({
-    //By default load any module IDs from js/lib
     baseUrl : 'javascripts',
     paths : {
-        jquery : 'jquery.min',
-        knockout : 'knockout-2.1.0',
+        jquery : [
+            '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',
+            'jquery.min'],
+        knockout : [
+            '//ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0',
+            'knockout-2.1.0'],
         sammy : 'sammy-0.7.1.min',
         prettyDate : 'app/jquery.prettyDate',
         metrojs : 'app/MetroJs',
@@ -21,6 +24,10 @@ requirejs.config({
             deps : ['jquery'],
             exports : 'jQuery.fn.prettyDate'
         },
+        'sammy' : {
+            deps : ['jquery'],
+            exports : 'jQuery.sammmy'
+        },
         'metrojs' : {
             deps : ['jquery'],
             exports : 'jQuery.fn.metrojs'
@@ -28,7 +35,7 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'knockout', 'app', 'sammy', 'prettyDate', 'metrojs' ], function ($, ko) {
+require(['jquery', 'knockout', 'app', 'sammy', 'prettyDate', 'metrojs' ], function ( $ ) {
 
     //Things that happen on dom ready
     $(function () {
