@@ -3,7 +3,7 @@
 
 KnockoutJS HTML5 app powered by an DVWP running on SharePoint 2007/2010 and 2013 to produce a Metro like start
 screen for a site.
-[Live Preview SP2010] and [Live Preview SP2013] are available and there will be an upcoming blog migration to
+[Live Preview SP2010] and [Live Preview SP2013] are available and there will be an upcoming blog that covers the migration to
 KnockoutJS.
 
 1. [SharePoint DVWP: from workhorse to ferrari in 7 steps]
@@ -18,7 +18,7 @@ unique view for OOTB SharePoint sites.
 3. Metro styled live tiles by @Drew Greenwell [MetroJS]
 4. Alternative for SergoiUI (the metro font) [Open Sans Condensed]
 5. Metro like icons by IconShock [Free Metro Icons]
-6. Migrating solution to client site [KnockoutJS]
+6. Client site templating and two-way data binding (MVVM) [KnockoutJS]
 
 
 [DVWP in ferrari mode]: http://rainerat.spirit.de/2012/07/15/sharepoint-dvwp-from-workhorse-to-ferrari-in-7-steps/
