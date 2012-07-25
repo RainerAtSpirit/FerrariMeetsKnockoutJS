@@ -28,7 +28,7 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'app', 'sammy', 'prettyDate', 'metrojs' ], function ($) {
+require(['jquery', 'knockout', 'app', 'sammy', 'prettyDate', 'metrojs' ], function ($, ko) {
 
     //Things that happen on dom ready
     $(function () {

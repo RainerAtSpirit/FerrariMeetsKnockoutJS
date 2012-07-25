@@ -4,10 +4,8 @@
                 xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime"
                 xmlns:msxsl="urn:schemas-microsoft-com:xslt">
     <xsl:import href="XSLT/xml2json.xslt"/>
-    <!--
-        <xsl:import href="/demos/metro/ZurbV2/xslt/xml2json.xslt"/>
-    -->
     <xsl:output method="html" version="1.0" encoding="UTF-8" indent="no"/>
+    <xsl:param name="UserID"></xsl:param>
     <xsl:variable name="Rows"
                   select="/dsQueryResponse/Rows/Row[not(@__spHidden = 'True') and not(contains(@__spDefaultViewUrl, '_catalogs')) and @__spTitle != 'ServiceFiles']"/>
 
@@ -34,6 +32,14 @@
             <item btId="Events" color="mango" icon="images/48/clipboard.png"/>
             <item btId="unknown" color="blue" icon="images/48/smiley_sad.png" mode="" direction=""/>
         </baseTemplate>
+        <userId>
+            <xsl:choose>
+                <xsl:when test="$UserID !='anonymous' ">
+                    <xsl:value-of select="substring-after($UserID, '\')" />
+                </xsl:when>
+                <xsl:otherwise>anonymous</xsl:otherwise>
+            </xsl:choose>
+        </userId>
     </xsl:variable>
 
     <xsl:variable name="tileData">

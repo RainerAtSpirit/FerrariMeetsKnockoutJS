@@ -14,7 +14,6 @@
         <html class="no-js lt-ie9" lang="en"> <![endif]-->
         <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8"/>
 
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width"/>
@@ -27,8 +26,11 @@
     <!-- Included CSS Files Production -->
     <link rel="stylesheet" href="stylesheets/prod.css"/>
     <!-- DVWP with DataSourceMode="ListOfLists" -->
-    <WebPartPages:DataFormWebPart runat="server" AsyncRefresh="False" FrameType="None" SuppressWebPartChrome="True">
-        <ParameterBindings></ParameterBindings>
+    <WebPartPages:DataFormWebPart runat="server" AsyncRefresh="False" FrameType="None" SuppressWebPartChrome="True"
+                                  __WebPartId="{A291D5E0-F30E-445B-9F70-8E2401F20DAD}">
+        <ParameterBindings>
+            <ParameterBinding Name="UserID" Location="CAMLVariable" DefaultValue="anonymous"/>
+        </ParameterBindings>
         <DataFields></DataFields>
         <XslLink>XSLT/ListsAsTiles.xslt</XslLink>
         <Xsl></Xsl>
@@ -57,13 +59,20 @@
 <div class="row">
     <div class="twelve columns">
         <h1>The Ferrari meets KnockoutJS</h1>
-
-        <p>Live demo for an upcoming blog post at <a href="http://rainerat.spirit.de/">Rainer at Spirit</a>
-        </p>
+        <p>Live demo for an upcoming blog post at <a href="http://rainerat.spirit.de/">Rainer at Spirit</a></p>
+        <div id="loginHelper" >
+            <div data-bind="visible: userId !== 'anonymous' " style="display: none;" >
+            You're logged on as:  <span class="success label" data-bind="text: userId"></span>
+            </div>
+            <div data-bind="visible: userId === 'anonymous' " style="display: none;">
+                <a href="../_layouts/Authenticate.aspx?Source=%2Fdemos%2Fmetro%2FZurbV2%2FMetroStyle%2Easpx" class="button"> Sign
+                    in</a>
+                with username: <span class="secondary label">ODataDemo</span> password: <span class="secondary label">OData!Demo</span>
+            </div>
+        </div>
         <hr/>
     </div>
 </div>
-
 <div class="row">
     <div id="metroTiles" class="twelve columns tiles" data-bind="foreach: TileData">
         <div class="live-tile" data-stops="100%" data-speed="750" data-delay="-1"
@@ -84,8 +93,12 @@
     </div>
 </div>
 
-<SharePoint:FormDigest ID="FormDigest1" runat="server"></SharePoint:FormDigest>
 
+<!-- Inline script for easier readability in HTML source mode -->
+<script type="text/javascript">
+
+</script>
+<SharePoint:FormDigest ID="FormDigest1" runat="server"></SharePoint:FormDigest>
 <script type="text/javascript">
     (function () {
         var ga = document.createElement('script');
