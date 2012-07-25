@@ -1,5 +1,5 @@
 # The Ferrari meets KnockoutJS
-## Using the SharePoint DVWP in Ferrari mode Part 2.
+## Using the SharePoint DVWP in Ferrari mode Part 3.
 
 KnockoutJS HTML5 app powered by an DVWP running on SharePoint 2007/2010 and 2013 to produce a Metro like start
 screen for a site.
